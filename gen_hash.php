@@ -2,10 +2,18 @@
 try{
 $random_word = `shuf -n 1 password.lst`;
 $pwd_arr = array();
+$random_word = trim($random_word);
+//echo strlen($random_word);
+//echo $random_word;
+//echo"<br>";
 array_push($pwd_arr, $random_word);
-$next_password = $random_word . '16';
+$next_password = $random_word.'16';
 array_push($pwd_arr,$next_password);
-array_push($pwd_arr,'ind11iana12');
+array_push($pwd_arr,'in11diana12');
+
+$dutch_word = `shuf -n 1 dutch`;
+array_push($pwd_arr,$dutch_word);
+
 
 $a = $_GET["name"];
 $user = substr($a, 0, -1);                                                               
